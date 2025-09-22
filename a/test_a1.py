@@ -12,5 +12,5 @@ def test_example(page: Page) -> None:
     Todo=page.get_by_role("link",name="TodoMVC",exact=True).get_attribute("href")
     print(Todo)
     sleep(5)
-    assert page.title =="React • TodoMVC"  # 打印页面标题
+    assert Todo =="http://todomvc.com"  # 打印页面标题
 
