@@ -1,8 +1,4 @@
-from time import sleep
-
-import re
-from playwright.sync_api import Page, expect
-
+from playwright.sync_api import Page
 
 def test_example(page: Page) -> None:
     page.goto("https://demo.playwright.dev/todomvc/#/")
@@ -11,5 +7,6 @@ def test_example(page: Page) -> None:
     page.get_by_role("checkbox", name="Toggle Todo").check()
     Todo=page.get_by_role("link",name="TodoMVC",exact=True).get_attribute("href")
     print(Todo)
-    assert Todo =="http://todomvc.com"  # 打印页面标题
+    #断言标题
+    assert Todo =="http://todomvc.com"
 
